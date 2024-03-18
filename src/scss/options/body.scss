@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box !important;
+}
+
+body {
+  background-color: #f8f8f8 !important;
+
+  &.hidden {
+    overflow: hidden;
+    @include display($laptop-size) {
+      padding-right: 17px;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.sections-header {
+  padding: 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(248, 248, 248, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  @include display($laptop-size) {
+    padding: 16px 24px;
+  }
+
+  &__title {
+    color: $h2-color;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+  }
+}

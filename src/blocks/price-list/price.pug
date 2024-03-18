@@ -1,0 +1,40 @@
+-
+  let price = [
+    {order: 'Диагностика', price: 'Бесплатно', term: '30 мин'},
+    {order: 'Замена дисплея', price: '1 000 ₽', term: '30-120 мин'},
+    {order: 'Замена полифонического динамика', price: '1 000 ₽', term: '30 мин'},
+    {order: 'Тестирование с выдачей технического заключения', price: '1 000 ₽', term: '30 мин'},
+    {order: 'Замена программного обеспечения', price: '1 000 ₽', term: '30 мин'},
+  ]
+
+.price
+  .sections-header.container
+    h2.sections-header__title цены на услуги
+  .price-list
+    table.swiper.slider-price
+      thead
+        tr
+          th 
+            p Ремонтные услуги
+          th 
+            p Цена
+          th 
+            p Срок
+      tbody.slider-wrapper.swiper-wrapper
+        each prices in price
+          tr.slider-slide
+            td 
+              p Ремонтные услуги
+              p #{prices.order}
+            td 
+              p Цена
+              p #{prices.price}
+            td
+              span
+                p Срок
+                p #{prices.term}
+              button(type="button" date-action=prices.order).price-button Заказать
+      tfoot.slider-pagination
+  aside.price-content
+    p.price-content__text Все цены указаны с учетом НДС. Стоимость ремонта указана <br> на единичную услугу. Для получения коммерческого <br> предложения на постоянное обслуживание, оставьте заявку.
+    a(href="").price-content__link Получить коммерческое предложение <span>

@@ -1,0 +1,22 @@
+// The priority is high
+@import '~normalize.css';
+@import 'reset-css';
+@import 'variables.scss';
+@import 'mixin/media.scss';
+@import 'options/fonts.scss';
+
+// dependency
+@import 'options/container.scss ';
+@import 'options/body.scss ';
+@import 'options/icons.scss';
+
+// component
+@import '../blocks/header/header.scss'; // component
+@import '../blocks/sidebar/sidebar.scss'; // component
+@import '../blocks/slider/slider.scss'; // component
+@import '../blocks/price-list/price.scss'; // component
+@import '../blocks/footer/footer.scss'; // component
+@import '../blocks/form/form.scss'; // component
+
+// library
+@import '/node_modules/swiper/swiper-bundle.css';

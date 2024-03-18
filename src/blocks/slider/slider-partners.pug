@@ -1,0 +1,27 @@
+-
+    let slider = [
+        {link: '1', img: './img/lenovo.png',},
+        {link: '2', img: './img/samsung.png',},
+        {link: '2', img: './img/apple.png',},
+        {link: '2', img: './img/view.png',},
+        {link: '2', img: './img/bosh.png',},
+        {link: '2', img: './img/hp.png',},
+        {link: '2', img: './img/acer.png',},
+        {link: '2', img: './img/sony.png',},
+        {link: '2', img: './img/lenovo.png',},
+        {link: '2', img: './img/samsung.png',},
+        {link: '2', img: './img/apple.png',},
+    ]
+
+.partners
+    .sections-header.container
+        h2.sections-header__title Ремонт различных видов техники
+    .swiper.slider.slider-partners
+        .slider-wrapper.swiper-wrapper
+            each sliders in slider
+                .slider-slide
+                    img(src=sliders.img alt="").slider-slide__image
+                    a(href=sliders.link).slider-slide__link
+        .slider-pagination
+        .slider-actions
+            button(type="button" active).icon--arrows Показать все

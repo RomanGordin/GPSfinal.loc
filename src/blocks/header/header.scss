@@ -1,0 +1,334 @@
+.header {
+  width: 100%;
+
+  &-menu {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    @include display($desktop-size) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      margin-top: 42px;
+    }
+  }
+
+  &-wrapper {
+    &:first-child {
+      position: relative;
+      margin-top: 24px;
+      padding: 0 16px;
+
+      @include display($desktop-size) {
+        margin-top: 0;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        background-color: #41f6d7;
+      }
+    }
+
+    &:last-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 17px 16px;
+      background-color: #fff;
+      border-bottom: 1px solid $mark-color;
+
+      @include display($laptop-size) {
+        padding: 18px 24px;
+      }
+
+      @include display($desktop-size) {
+        background-color: inherit;
+        padding: 0;
+      }
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+
+    @include display($desktop-size) {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      height: 32px;
+      width: 2px;
+      background-color: #eaeaea;
+
+      @include display($laptop-size) {
+        order: 1;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    color: $h1-color;
+    font-size: $h1-size;
+    font-weight: 700;
+    line-height: 40px;
+  }
+
+  &__logo {
+    margin: 0 16px;
+    @include display($laptop-size) {
+      order: 2;
+      margin: 0 20px;
+    }
+  }
+
+  &-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 11px;
+    width: 40px;
+    height: 40px;
+    background-color: $button-color;
+    border: none;
+    border-radius: 50%;
+
+    @include display($desktop-size) {
+      display: none;
+    }
+
+    span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 2.5px 0;
+      background-color: #fff;
+
+      &:nth-child(2n) {
+        width: 10px;
+      }
+
+      &:nth-child(3n) {
+        width: 14px;
+      }
+    }
+  }
+
+  &__logo {
+    @include display($desktop-size) {
+      display: none;
+    }
+  }
+
+  &-social {
+    display: flex;
+    align-items: center;
+
+    @include display($laptop-size) {
+      &::after {
+        content: '';
+        display: block;
+        margin: 0 12px;
+        height: 32px;
+        width: 2px;
+        background-color: #eaeaea;
+      }
+    }
+
+    &__item {
+      border: none;
+      background-color: #fff;
+      text-decoration: none;
+      margin: 0 8px;
+      padding: 0;
+      transition: opacity 0.5s;
+
+      &::before {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: $button-color;
+        border-radius: 50%;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      @include display($laptop-size) {
+        &:nth-child(4) {
+          order: 5;
+        }
+
+        &:nth-child(5) {
+          order: 6;
+        }
+      }
+
+      @include display($desktop-size) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        background-color: inherit;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &--visible {
+        display: none;
+        @include display($laptop-size) {
+          display: block;
+        }
+
+        @include display($desktop-size) {
+          display: none;
+        }
+      }
+    }
+
+    &__text {
+      display: none;
+      font-weight: 500;
+      color: $text-color;
+
+      @include display($desktop-size) {
+        display: block;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &-slider {
+  }
+
+  &-tabs {
+    display: flex;
+    overflow: scroll;
+    position: relative;
+    margin-bottom: 24px;
+    padding: 0 15px;
+    @include display($laptop-size) {
+      padding: 0 24px;
+    }
+
+    @include display($desktop-size) {
+      overflow: hidden;
+      flex-wrap: wrap;
+      margin: 0 -5px 10px -5px;
+      padding: 0 30px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      width: 40px;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(248, 248, 248, 0) 0%,
+        rgba(248, 248, 248, 1) 100%
+      );
+      @include display($desktop-size) {
+        display: none;
+      }
+    }
+
+    &__item {
+      display: block;
+      padding: 9px 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: inherit;
+      color: $text-color-second;
+      font-size: $text-size;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.4s;
+
+      @include display($desktop-size) {
+        margin: 0 5px;
+      }
+
+      &--active {
+        background-color: #fff;
+        box-shadow: 0 0 0 2px $button-border inset;
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 2px $button-border inset;
+      }
+    }
+  }
+
+  &-slides {
+  }
+
+  &-slide {
+    @include display($laptop-size) {
+      display: flex;
+      padding: 0 24px;
+    }
+
+    @include display($desktop-size) {
+      padding: 0 30px;
+    }
+
+    &__text {
+      padding: 0 15px;
+      margin-bottom: 15px;
+      @include display($laptop-size) {
+        padding: 0 48px 0 0;
+      }
+
+      @include display($desktop-size) {
+        margin-top: 10px;
+      }
+    }
+
+    &__link {
+      display: block;
+      padding: 0 15px;
+      margin-bottom: 15px;
+      text-decoration: none;
+      font-weight: 500;
+      color: $text-color;
+
+      &::before {
+        margin-right: 16px;
+      }
+    }
+
+    &__image {
+      max-width: 100%;
+      object-fit: cover;
+
+      @include display($laptop-size) {
+        max-width: 50%;
+      }
+    }
+  }
+}

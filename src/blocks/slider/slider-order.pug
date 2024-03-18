@@ -1,0 +1,27 @@
+-
+    let slider = [
+        {link: '/', text: 'Ремонт ноутбуков',},
+        {link: '/', text: 'Ремонт планшетов ',},
+        {link: '/', text: 'Ремонт ПК ',},
+        {link: '/', text: 'Ремонт  мониторов',},
+        {link: '/', text: 'Ремонт ноутбуков',},
+        {link: '/', text: 'Ремонт ноутбуков',},
+        {link: '/', text: 'Ремонт ноутбуков',},
+        {link: '/', text: 'Ремонт ноутбуков',},
+        {link: '/', text: 'Ремонт ноутбуков',},
+        {link: '/', text: 'Ремонт ноутбуков',},
+        {link: '/', text: 'Ремонт ноутбуков',},
+    ]
+
+.partners
+    .sections-header.container
+        h2.sections-header__title Ремонт техники различных брендов
+    .swiper.slider.slider-order
+        .slider-wrapper.swiper-wrapper
+            each sliders in slider
+                .slider-slide.slider-slide--height.slider-slide--display
+                    p.slider-slide__text #{sliders.text}
+                    a(href=sliders.link).slider-slide__link
+        .slider-pagination
+        .slider-actions
+            button(type="button" active).icon--arrows Показать все

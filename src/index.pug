@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Document
+  body
+    .container
+      //- sidebar 
+      include blocks/sidebar/sidebar.pug
+      .wrapper
+        //- header 
+        include blocks/header/header.pug
+        main 
+          include blocks/slider/slider-partners.pug
+          include blocks/slider/slider-order.pug
+          include blocks/price-list/price.pug
+        include blocks/footer/footer.pug
+    //- form
+    include blocks/form/callback-form.pug
+    include blocks/form/call-form.pug

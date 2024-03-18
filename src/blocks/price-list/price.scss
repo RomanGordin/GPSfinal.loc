@@ -1,0 +1,246 @@
+.price {
+  margin: 24px 0 40px 0;
+
+  @include display($laptop-size) {
+    margin: 32px 0;
+  }
+
+  @include display($desktop-size) {
+    margin: 50px 0;
+  }
+
+  &-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    margin-top: 30px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 55;
+      right: 0;
+      width: 24px;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(248, 248, 248, 0) 0%,
+        rgba(248, 248, 248, 1) 100%
+      );
+
+      @include display($laptop-size) {
+        display: none;
+      }
+    }
+  }
+
+  thead {
+    display: none;
+
+    @include display($laptop-size) {
+      background-color: #f8f8f8;
+      display: table-header-group;
+    }
+  }
+
+  .slider {
+    &-price {
+      width: 100%;
+      border-collapse: inherit;
+
+      @include display($laptop-size) {
+        display: table;
+        width: calc(100% - 60px);
+      }
+    }
+
+    &-wrapper {
+      @include display($laptop-size) {
+        display: table-row-group;
+        border-radius: 6px;
+        background-color: #fff;
+      }
+    }
+
+    &-pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+
+      @include display($laptop-size) {
+        display: none;
+      }
+    }
+  }
+
+  tr {
+    display: flex;
+    flex-direction: column;
+    min-width: 260px;
+    padding: 8px 16px;
+    margin: 0 8px;
+    background-color: #fff;
+
+    @include display($laptop-size) {
+      display: table-row;
+      max-width: 100%;
+      width: 100%;
+      padding: 16px 0;
+      background-color: inherit;
+    }
+
+    td {
+      padding: 8px 0;
+      vertical-align: middle;
+
+      &:last-child {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @include display($laptop-size) {
+        padding: 16px 0;
+        border-bottom: 1px solid $slide-border-color;
+
+        &:first-child {
+          border-left: 16px solid white;
+        }
+
+        &:nth-child(2) {
+          width: 20%;
+        }
+
+        &:last-child {
+          align-items: center;
+          border-right: 16px solid white;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        color: $text-color;
+        font-weight: 500;
+
+        &:first-child {
+          font-size: 14px;
+          font-weight: 400;
+          margin-bottom: 4px;
+          color: $text-color-second;
+
+          @include display($laptop-size) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  th {
+    padding: 16px 0;
+    text-align: left;
+    color: $text-color-second;
+  }
+
+  &-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 4px 10px;
+    min-width: 120px;
+    min-height: 32px;
+    border: none;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    background-color: $button-color;
+    cursor: pointer;
+    transition: opacity 0.5s;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: calc(50% - 6px);
+      right: 16px;
+      width: 2px;
+      height: 7.5px;
+      background-color: white;
+      border-radius: 2px;
+      transform: rotate(135deg);
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: calc(50% - 6px);
+      right: 16px;
+      width: 2px;
+      height: 7.5px;
+      background-color: white;
+      border-radius: 2px;
+      transform: rotate(225deg);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &-content {
+    margin: 16px 16px 0 16px;
+    @include display($laptop-size) {
+      margin: 24px 24px 0 24px;
+    }
+
+    @include display($desktop-size) {
+      margin: 32px 32px 0 32px;
+    }
+
+    &__text {
+      color: $text-color;
+      margin-bottom: 16px;
+    }
+
+    &__link {
+      font-weight: 500;
+      color: $text-color;
+      text-decoration: none;
+
+      span {
+        display: inline-block;
+        position: relative;
+        height: 100%;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 2px;
+          height: 7.5px;
+          background-color: $button-color;
+          border-radius: 2px;
+          transform: rotate(135deg);
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -2px;
+          right: -10px;
+          width: 2px;
+          height: 7.5px;
+          background-color: $button-color;
+          border-radius: 2px;
+          transform: rotate(225deg);
+        }
+      }
+    }
+  }
+}

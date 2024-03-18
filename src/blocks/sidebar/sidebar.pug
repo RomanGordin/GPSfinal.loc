@@ -1,0 +1,41 @@
+.sidebar-container 
+  .sidebar
+    .sidebar-wrapper
+      .sidebar-header
+        .sidebar-buttons
+          button.sidebar-buttons__button.sidebar__item--hover
+          a.sidebar-buttons__logo.sidebar__item--hover(href="/")
+            img(src="./img/logo.svg" alt="GPS")
+        .sidebar-buttons
+          button.sidebar-buttons__search.sidebar__item--hover.icon--search2
+      nav.sidebar-navigation
+        ul
+          li
+            a.sidebar-navigation__item(href="/").sidebar-navigation__item--active Ремонт техники
+          li
+            a.sidebar-navigation__item(href="/") Услуги и сервисы
+          li
+            a.sidebar-navigation__item(href="/") Корпоративным клиентам
+          li
+            a.sidebar-navigation__item(href="/") Продавцам техники
+          li
+            a.sidebar-navigation__item(href="/") Партнерам
+          li
+            a.sidebar-navigation__item(href="/") Производителям
+          li
+            a.sidebar-navigation__item(href="/") Наши сервисные центры
+          li
+            a.sidebar-navigation__item(href="/") Контакты
+    .sidebar-contacts 
+      .sidebar-links
+        a.sidebar-links__link.sidebar__item--hover.icon--phone(href="" form-call) 
+        a.sidebar-links__link.sidebar__item--hover.icon--chat(href="" form-callback) 
+        a.sidebar-links__link.sidebar__item--hover.icon--person(href="") 
+      a.sidebar-contacts__mail(href="") mail@cps.com
+      a.sidebar-contacts__phone(href="") 8 800 890 8900
+      .sidebar-language 
+        a.sidebar-language__items.sidebar-language__items--active(href="") RU
+        a.sidebar-language__items(href="") EN
+        a.sidebar-language__items(href="") CH
+.overlay.overlay
+//- .overlay.overlay--active

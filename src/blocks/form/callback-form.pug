@@ -1,0 +1,27 @@
+-
+  let input = [
+    {inputType: 'text', inputPlaceholder: 'Имя'},
+    {inputType: 'tel', inputPlaceholder: 'Телефон'},
+    {inputType: 'email', inputPlaceholder: 'Электронная почта'},
+  ]
+-
+  let textarea = [
+    {inputType: 'text', inputPlaceholder: 'Сообщение'}
+  ]
+
+.form-wrapper.form-callback
+  .form-overlay
+  .form-container
+    .form-close
+      button.form-closer
+    form(action="").form.form-default
+      .form-header
+        h2.form-header__title Обратная связь
+      .form-content
+        each inputs in input
+          input(type=inputs.inputType placeholder=inputs.inputPlaceholder).form-content__input
+        each textareas in textarea
+          textarea(type=textareas.inputType placeholder=textareas.inputPlaceholder rows="5").form-content__input
+      .form-actions
+        p.form-actions__text Нажимая “отправить”, вы даете согласие на <a href="/" class="form-actions__text--color">обработку персональных данных</a> и соглашаетесь с нашей <a href="/" class="form-actions__text--color">политикой конфиденциальности</a>
+        button(type="submit").form-button ОТПРАВИТЬ
