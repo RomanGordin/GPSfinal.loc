@@ -144,6 +144,10 @@
         height: 32px;
         width: 2px;
         background-color: #eaeaea;
+
+        @include display($desktop-size) {
+          display: none;
+        }
       }
     }
 

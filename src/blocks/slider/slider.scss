@@ -26,7 +26,7 @@
   }
 
   @include display($laptop-size) {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     height: max-content;
